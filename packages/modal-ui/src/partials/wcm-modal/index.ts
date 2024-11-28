@@ -144,7 +144,6 @@ export class WcmModal extends LitElement {
         <div class="wcm-container" tabindex="0">
           ${this.open
             ? html`
-                <wcm-modal-backcard></wcm-modal-backcard>
                 <div class="wcm-card">
                   <wcm-modal-router></wcm-modal-router>
                   <wcm-modal-toast></wcm-modal-toast>

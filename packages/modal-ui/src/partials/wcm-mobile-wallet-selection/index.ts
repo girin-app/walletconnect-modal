@@ -1,4 +1,4 @@
-import { ConfigCtrl, RouterCtrl } from '@walletconnect/modal-core'
+import { ConfigCtrl, ModalCtrl } from '@walletconnect/modal-core'
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { SvgUtil } from '../../utils/SvgUtil'
@@ -11,8 +11,8 @@ export class WcmMobileWalletSelection extends LitElement {
   public static styles = [ThemeUtil.globalCss, styles]
 
   // -- private ------------------------------------------------------ //
-  private onQrcode() {
-    RouterCtrl.push('Qrcode')
+  private onClose() {
+    ModalCtrl.close()
   }
 
   // -- render ------------------------------------------------------- //
@@ -37,9 +37,9 @@ export class WcmMobileWalletSelection extends LitElement {
 
     return html`
       <wcm-modal-header
-        title="Connect your wallet"
-        .onAction=${this.onQrcode}
-        .actionIcon=${SvgUtil.QRCODE_ICON}
+        title="Connect wallet"
+        .onAction=${this.onClose}
+        .actionIcon=${SvgUtil.CROSS_ICON}
       ></wcm-modal-header>
 
       ${isWallets

@@ -11,7 +11,7 @@ function themeModeVariables() {
     },
     dark: {
       foreground: { 1: `rgb(228,231,231)`, 2: `rgb(148,158,158)`, 3: `rgb(110,119,119)` },
-      background: { 1: `rgb(20,20,20)`, 2: `rgb(39,42,42)`, 3: `rgb(59,64,64)` },
+      background: { 1: `rgba(32, 33, 39, 1)`, 2: `rgba(32, 33, 39, 1)`, 3: `rgb(59,64,64)` },
       overlay: 'rgba(255,255,255,0.1)'
     }
   }

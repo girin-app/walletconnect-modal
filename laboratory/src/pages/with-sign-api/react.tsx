@@ -10,7 +10,7 @@ import { getAddressFromAccount, getSdkError } from '@walletconnect/utils'
 import { useState } from 'react'
 import { NotificationCtrl } from '../../controllers/NotificationCtrl'
 import { DEMO_METADATA, DEMO_NAMESPACE, DEMO_SIGN_REQUEST } from '../../data/Constants'
-import { getProjectId, getTheme } from '../../utilities/EnvUtil'
+import { getProjectId } from '../../utilities/EnvUtil'
 import { getErrorMessage, showErrorToast } from '../../utilities/ErrorUtil'
 
 export default function WithSignReactPage() {
@@ -86,7 +86,15 @@ export default function WithSignReactPage() {
 
       <WalletConnectModalSign
         projectId={getProjectId()}
-        modalOptions={{ themeMode: getTheme() }}
+        modalOptions={{
+          themeMode: 'dark',
+          themeVariables: {
+            '--wcm-background-color': '#292A30CC',
+            '--wcm-accent-color': '#34D98F',
+            '--wcm-accent-fill-color': '#34D98F'
+          },
+          enableExplorer: false
+        }}
         metadata={DEMO_METADATA}
       />
     </>

@@ -1,10 +1,9 @@
-import { ConfigCtrl } from '@walletconnect/modal-core'
+import { ConfigCtrl, ModalCtrl } from '@walletconnect/modal-core'
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import { SvgUtil } from '../../utils/SvgUtil'
 import { TemplateUtil } from '../../utils/TemplateUtil'
 import { ThemeUtil } from '../../utils/ThemeUtil'
-import { UiUtil } from '../../utils/UiUtil'
 import styles from './styles.css'
 
 @customElement('wcm-desktop-wallet-selection')
@@ -33,24 +32,20 @@ export class WcmDesktopWalletSelection extends LitElement {
     return html`
       <wcm-modal-header
         .border=${true}
-        title="Connect your wallet"
-        .onAction=${UiUtil.handleUriCopy}
-        .actionIcon=${SvgUtil.COPY_ICON}
+        title="Connect wallet"
+        .onAction=${ModalCtrl.close}
+        .actionIcon=${SvgUtil.CROSS_ICON}
       ></wcm-modal-header>
 
       <wcm-modal-content>
-        <div class="wcm-mobile-title">
-          <div class="wcm-subtitle">
-            ${SvgUtil.MOBILE_ICON}
-            <wcm-text variant="small-regular" color="accent">Mobile</wcm-text>
-          </div>
+        <div class="wcm-modal-inner">
+          <div class="title">WalletConnect</div>
+          <div class="desc">Scan QR code with a WalletConnect-compatible wallet</div>
 
-          <div class="wcm-subtitle">
-            ${SvgUtil.SCAN_ICON}
-            <wcm-text variant="small-regular" color="secondary">Scan with your wallet</wcm-text>
+          <div class="wcm-qr-wrapper">
+            <wcm-walletconnect-qr></wcm-walletconnect-qr>
           </div>
         </div>
-        <wcm-walletconnect-qr></wcm-walletconnect-qr>
       </wcm-modal-content>
 
       ${isWallets

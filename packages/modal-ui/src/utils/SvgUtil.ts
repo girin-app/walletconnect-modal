@@ -2,11 +2,8 @@ import { svg } from 'lit-html'
 
 export const SvgUtil = {
   CROSS_ICON: svg`
-    <svg width="12" height="12" viewBox="0 0 12 12">
-      <path
-        d="M9.94 11A.75.75 0 1 0 11 9.94L7.414 6.353a.5.5 0 0 1 0-.708L11 2.061A.75.75 0 1 0 9.94 1L6.353 4.586a.5.5 0 0 1-.708 0L2.061 1A.75.75 0 0 0 1 2.06l3.586 3.586a.5.5 0 0 1 0 .708L1 9.939A.75.75 0 1 0 2.06 11l3.586-3.586a.5.5 0 0 1 .708 0L9.939 11Z"
-        fill="#fff"
-      />
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M3.3335 3.33301L12.6668 12.6663M12.6668 3.33301L3.3335 12.6663" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   `,
 

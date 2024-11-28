@@ -7,8 +7,7 @@ header {
 }
 
 .wcm-border {
-  border-bottom: 1px solid var(--wcm-color-bg-2);
-  margin-bottom: 20px;
+  padding: 28px 24px 24px 24px;
 }
 
 header button {
@@ -33,6 +32,15 @@ header button:active {
 .wcm-action-btn {
   position: absolute;
   right: 0;
+}
+
+.wcm-action-btn svg {
+  width: 32px;
+  height: 32px;
+  border-radius: 47px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px);
+  padding: 6px;
 }
 
 path {

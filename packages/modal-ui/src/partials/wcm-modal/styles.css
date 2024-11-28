@@ -33,12 +33,11 @@
 
 .wcm-container {
   position: relative;
-  max-width: 360px;
+  max-width: 552px;
   width: 100%;
   outline: none;
   border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius)
     var(--wcm-container-border-radius) var(--wcm-container-border-radius);
-  border: 1px solid var(--wcm-color-overlay);
   overflow: hidden;
 }
 
