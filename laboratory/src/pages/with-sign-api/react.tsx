@@ -16,7 +16,7 @@ import { getErrorMessage, showErrorToast } from '../../utilities/ErrorUtil'
 export default function WithSignReactPage() {
   const [disconnecting, setDisconnecting] = useState<boolean>(false)
 
-  const session = useSession()
+  const { session, loading } = useSession()
   const { request } = useRequest(
     DEMO_SIGN_REQUEST(
       session?.topic as string,
@@ -66,7 +66,15 @@ export default function WithSignReactPage() {
     <>
       <Card css={{ maxWidth: '400px', margin: '100px auto' }} variant="bordered">
         <Card.Body css={{ justifyContent: 'center', alignItems: 'center', height: '200px' }}>
-          {session ? (
+          {loading && <Loading />}
+
+          {!loading && !session && (
+            <Button shadow color="primary" onPress={onConnect}>
+              Connect
+            </Button>
+          )}
+
+          {!loading && session && (
             <>
               <Button shadow color="primary" onPress={onSignMessage}>
                 Sign Message
@@ -76,10 +84,6 @@ export default function WithSignReactPage() {
                 {disconnecting ? <Loading size="xs" color={'white'} /> : 'Disconnect'}
               </Button>
             </>
-          ) : (
-            <Button shadow color="primary" onPress={onConnect}>
-              Connect
-            </Button>
           )}
         </Card.Body>
       </Card>

@@ -9,6 +9,7 @@ type Data = Awaited<ReturnType<WalletConnectModalSignInstance['getSession']>>
 
 export function useSession() {
   const [session, setSession] = useState<Data | undefined>(undefined)
+  const [loading, setLoading] = useState(true)
 
   useOnSessionDelete(event => {
     if (event.topic === session?.topic) {
@@ -35,6 +36,7 @@ export function useSession() {
       const client = await getWalletConnectModalSignClient()
       const response = await client.getSession()
       setSession(response)
+      setLoading(false)
     }
     getActiveSession()
 
@@ -46,5 +48,5 @@ export function useSession() {
     }
   }, [])
 
-  return session
+  return { session, loading }
 }
